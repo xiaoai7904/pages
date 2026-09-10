@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#b91c1c" />
+  <title>王姐·旺苍酸辣粉｜自媒体运营方案</title>
+  <style>
+    :root{
+      --bg:#fff8f3;
+      --card:#ffffff;
+      --text:#241b18;
+      --muted:#7c6f68;
+      --line:#f0dfd7;
+      --brand:#b91c1c;
+      --brand-2:#dc2626;
+      --gold:#f59e0b;
+      --green:#15803d;
+      --shadow:0 14px 35px rgba(91,33,19,.08);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(220,38,38,.08), transparent 32%),
+        linear-gradient(180deg,#fffaf7 0%,#fff8f3 100%);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    .wrap{
+      width:min(100%, 1100px);
+      margin:0 auto;
+      padding:0 16px 48px;
+    }
+
+    .hero{
+      margin:0 -16px 20px;
+      padding:38px 20px 30px;
+      background:
+        linear-gradient(145deg,rgba(127,29,29,.96),rgba(220,38,38,.94)),
+        #b91c1c;
+      color:#fff;
+      border-radius:0 0 30px 30px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;
+      border-radius:50%;
+      right:-45px;top:-55px;
+      background:rgba(255,255,255,.08);
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.1);
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.04em;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:clamp(30px,8vw,54px);
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+    .hero p{
+      margin:0;
+      color:rgba(255,255,255,.86);
+      max-width:760px;
+      font-size:15px;
+    }
+    .hero-meta{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:20px;
+    }
+    .metric{
+      padding:13px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(8px);
+    }
+    .metric b{display:block;font-size:18px}
+    .metric span{font-size:12px;color:rgba(255,255,255,.76)}
+
+    .section{
+      margin-top:18px;
+      background:var(--card);
+      border:1px solid rgba(185,28,28,.07);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .index{
+      flex:0 0 34px;
+      width:34px;height:34px;
+      border-radius:12px;
+      background:#fee2e2;
+      color:var(--brand);
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:14px;
+    }
+    h2{
+      margin:0;
+      font-size:21px;
+      line-height:1.3;
+    }
+    .sub{
+      margin:3px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      gap:12px;
+    }
+
+    .content-card{
+      padding:16px;
+      border-radius:18px;
+      background:#fffaf7;
+      border:1px solid var(--line);
+    }
+    .content-card strong{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      font-size:15px;
+    }
+    .content-card p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .pill{
+      font-size:12px;
+      font-weight:700;
+      color:#fff;
+      background:var(--brand);
+      padding:4px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    .progress{
+      height:8px;
+      background:#f5e7e2;
+      border-radius:999px;
+      overflow:hidden;
+      margin-top:12px;
+    }
+    .progress > i{
+      display:block;height:100%;
+      background:linear-gradient(90deg,var(--brand),#ef4444);
+      border-radius:999px;
+    }
+
+    .steps{
+      display:grid;
+      gap:10px;
+      counter-reset:step;
+    }
+    .step{
+      position:relative;
+      padding:14px 14px 14px 48px;
+      border-radius:16px;
+      background:#fffaf7;
+      border:1px solid var(--line);
+    }
+    .step:before{
+      counter-increment:step;
+      content:counter(step);
+      position:absolute;
+      left:14px;top:14px;
+      width:24px;height:24px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:var(--brand);
+      color:#fff;
+      font-weight:800;
+      font-size:12px;
+    }
+    .step b{font-size:14px}
+    .step span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+
+    .prompt{
+      padding:16px;
+      border-radius:18px;
+      background:#211714;
+      color:#fff;
+      font-size:13px;
+      overflow:auto;
+      white-space:pre-wrap;
+    }
+
+    .visual-grid{
+      display:grid;
+      gap:12px;
+    }
+    .visual-card{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .visual-card .tag{
+      display:inline-block;
+      font-size:11px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:#fef2f2;
+      color:var(--brand);
+      font-weight:700;
+    }
+    .visual-card h3{
+      margin:10px 0 6px;
+      font-size:16px;
+    }
+    .visual-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .quote{
+      padding:18px;
+      border-left:4px solid var(--brand);
+      background:#fff7ed;
+      border-radius:0 16px 16px 0;
+      font-size:14px;
+    }
+
+    .week{
+      display:grid;
+      gap:10px;
+    }
+    .day{
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:12px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+    .day-name{
+      font-weight:800;
+      color:var(--brand);
+    }
+    .day h3{
+      margin:0 0 4px;
+      font-size:15px;
+    }
+    .day p{
+      margin:0;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .platform{
+      margin-top:7px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .platform span{
+      padding:3px 7px;
+      border-radius:999px;
+      background:#f4f4f5;
+      color:#52525b;
+      font-size:11px;
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .kpi .box{
+      padding:15px;
+      border-radius:16px;
+      background:#fafafa;
+      border:1px solid #eee;
+    }
+    .kpi b{
+      display:block;
+      font-size:21px;
+      color:var(--brand);
+    }
+    .kpi span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      padding:28px 8px 8px;
+    }
+
+    @media (min-width:700px){
+      .wrap{padding-left:24px;padding-right:24px}
+      .hero{margin-left:0;margin-right:0;border-radius:30px;margin-top:24px;padding:46px 42px}
+      .hero-meta{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .visual-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .week{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .kpi{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .section{padding:26px}
+    }
+
+    @media (min-width:960px){
+      .week{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .week .day:last-child{grid-column:span 3}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">王姐 · 旺苍酸辣粉｜新津花源店</div>
+      <h1>自媒体内容生产与运营方案</h1>
+      <p>把日常拍摄、AI 文案、图片优化和多平台发布整合成一套可长期执行的内容流水线，降低运营成本，提高内容稳定性与转化效率。</p>
+      <div class="hero-meta">
+        <div class="metric"><b>10 分钟</b><span>员工每日拍摄</span></div>
+        <div class="metric"><b>3–5 分钟</b><span>负责人审核</span></div>
+        <div class="metric"><b>3 个平台</b><span>同素材多端复用</span></div>
+        <div class="metric"><b>1 个月</b><span>形成内容模板库</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">01</div>
+        <div><h2>内容定位与比例</h2><p class="sub">避免账号变成“天天发广告”的菜单号。</p></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="content-card">
+          <strong>产品馋感 <span class="pill">35%</span></strong>
+          <p>粉、香油芝麻、串串、夹粉、热气、出锅瞬间。</p>
+          <div class="progress"><i style="width:35%"></i></div>
+        </div>
+        <div class="content-card">
+          <strong>家乡情绪 <span class="pill">25%</span></strong>
+          <p>旺苍老乡、顾客故事、家乡味、真实评价。</p>
+          <div class="progress"><i style="width:25%"></i></div>
+        </div>
+        <div class="content-card">
+          <strong>真实门店 <span class="pill">20%</span></strong>
+          <p>备菜、泡粉、煮粉、串串柜、忙碌场景。</p>
+          <div class="progress"><i style="width:20%"></i></div>
+        </div>
+        <div class="content-card">
+          <strong>旺苍文化 <span class="pill">10%</span></strong>
+          <p>旺苍地域、米仓古道、当地饮食文化。</p>
+          <div class="progress"><i style="width:10%"></i></div>
+        </div>
+        <div class="content-card">
+          <strong>活动转化 <span class="pill">10%</span></strong>
+          <p>套餐、新品、优惠、位置和到店引导。</p>
+          <div class="progress"><i style="width:10%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">02</div>
+        <div><h2>每日拍摄 SOP</h2><p class="sub">员工只负责把真实素材拍好，不负责想文案。</p></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>拍 8–15 张照片</b><span>刚出锅整碗、筷子挑粉、串串柜近景、顾客桌面、门头。</span></div>
+        <div class="step"><b>拍 3–5 段竖屏视频</b><span>每段约 5–15 秒，记录煮粉、浇料、出锅、忙碌场景。</span></div>
+        <div class="step"><b>统一 9:16 竖拍</b><span>优先自然光，镜头略低，食物占画面约 60%–80%。</span></div>
+        <div class="step"><b>一次拍完整碗 + 特写 + 动作</b><span>同一份菜同时产出多种素材，方便后期复用。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">03</div>
+        <div><h2>AI 内容生产流程</h2><p class="sub">素材进来后，AI 完成内容策划和多平台改写。</p></div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>识别素材亮点</b><span>判断今天最值得发布的主题和故事角度。</span></div>
+        <div class="step"><b>挑主图与配图</b><span>筛掉重复、杂乱、光线差的图片。</span></div>
+        <div class="step"><b>图片优化建议</b><span>调整亮度、背景、构图、食物质感与画面干净度。</span></div>
+        <div class="step"><b>生成文案与标签</b><span>输出小红书、抖音图文、朋友圈三个版本。</span></div>
+      </div>
+      <div class="prompt">固定提示词：
+
+今天是王姐旺苍酸辣粉的素材。
+根据图片和视频内容分析今天最值得发的主题；
+挑选主图和配图，指出哪些图片需要修改；
+输出小红书、抖音图文、朋友圈三个版本；
+不要写成硬广告，要像真实店主分享。</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">04</div>
+        <div><h2>图片视觉体系</h2><p class="sub">真实感为主，品牌红色用于强化识别，而不是覆盖所有内容。</p></div>
+      </div>
+      <div class="visual-grid">
+        <div class="visual-card">
+          <span class="tag">60%</span>
+          <h3>真实食物型</h3>
+          <p>真实菜品照片为主，优化光线、背景、构图和食物质感。封面可只放一句短标题。</p>
+        </div>
+        <div class="visual-card">
+          <span class="tag">25%</span>
+          <h3>情绪故事型</h3>
+          <p>照片搭配一句有记忆点的大标题，强化“旺苍”“家乡味”“老乡”等情绪符号。</p>
+        </div>
+        <div class="visual-card">
+          <span class="tag">15%</span>
+          <h3>活动海报型</h3>
+          <p>使用品牌红色 + 王姐卡通形象 + 产品实拍 + 活动信息，承担促销转化。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">05</div>
+        <div><h2>文案风格</h2><p class="sub">少一点“广告腔”，多一点真实人物和家乡记忆。</p></div>
+      </div>
+      <div class="quote">
+        有些味道不是多高级，<br>
+        就是离开家以后，会突然想起。<br><br>
+        前两天店里来了一个旺苍老乡，<br>
+        第一口粉下去就说：“对，就是这个味。”<br><br>
+        那一刻，比别人夸一句好吃还高兴。
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">06</div>
+        <div><h2>第一周内容计划</h2><p class="sub">先跑通 7 天节奏，再根据数据调整。</p></div>
+      </div>
+      <div class="week">
+        <article class="day"><div class="day-name">周一</div><div><h3>一碗粉的制作过程</h3><p>泡粉 → 煮粉 → 加料 → 成品</p><div class="platform"><span>抖音</span><span>小红书</span></div></div></article>
+        <article class="day"><div class="day-name">周二</div><div><h3>旺苍人的家乡味</h3><p>粉 + 门店 + 故事</p><div class="platform"><span>小红书</span></div></div></article>
+        <article class="day"><div class="day-name">周三</div><div><h3>今天串串柜有什么</h3><p>荤素串串特写</p><div class="platform"><span>抖音</span></div></div></article>
+        <article class="day"><div class="day-name">周四</div><div><h3>顾客真实反馈</h3><p>顾客 / 评价 / 菜品</p><div class="platform"><span>小红书</span></div></div></article>
+        <article class="day"><div class="day-name">周五</div><div><h3>周末馋感</h3><p>挑粉 + 热气 + 串串</p><div class="platform"><span>全平台</span></div></div></article>
+        <article class="day"><div class="day-name">周六</div><div><h3>店里真实的一天</h3><p>忙碌 / 煮粉 / 顾客</p><div class="platform"><span>抖音</span></div></div></article>
+        <article class="day"><div class="day-name">周日</div><div><h3>旺苍文化故事</h3><p>地域元素 + 粉 + 老照片/文化素材</p><div class="platform"><span>小红书</span><span>公众号</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">07</div>
+        <div><h2>工作量控制</h2><p class="sub">一份素材，多次利用。</p></div>
+      </div>
+      <div class="kpi">
+        <div class="box"><b>1 次</b><span>完整制作过程拍摄</span></div>
+        <div class="box"><b>1 条</b><span>抖音视频</span></div>
+        <div class="box"><b>1 篇</b><span>小红书图文</span></div>
+        <div class="box"><b>1 条+</b><span>朋友圈与复用素材</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="index">08</div>
+        <div><h2>一个月后的优化机制</h2><p class="sub">让高表现内容不断被复制，而不是每次重新试错。</p></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="content-card"><strong>内容数据</strong><p>浏览量、完播率、收藏、评论。</p></div>
+        <div class="content-card"><strong>转化数据</strong><p>私信、到店询问、活动转化。</p></div>
+        <div class="content-card"><strong>保留模板</strong><p>高表现选题、标题结构、拍摄方式。</p></div>
+        <div class="content-card"><strong>持续淘汰</strong><p>低互动、低转化、重复感强的内容形式。</p></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      王姐·旺苍酸辣粉｜新津花源店<br>
+      Mobile-first Self-media Operation Plan
+    </div>
+  </main>
+</body>
+</html>
